@@ -2,7 +2,7 @@
 // @name       MushGarou
 // @version    0.1.0
 // @author     Ma c'hi (mush@machi.tel)
-// @description  Modifications de Mush.vg pour parties dans le style "Les Loups Garous de Thiercelieux"
+// @description  Modifications de Mush.vg pour parties dans le style 'Les Loups Garous de Thiercelieux'
 // @grant      GM_xmlhttpRequest
 // @match      http://mush.vg
 // @match      http://mush.vg/*
