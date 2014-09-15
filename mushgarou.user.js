@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name       MushGarou
-// @version    0.1.8
+// @version    0.1.9
 // @author     Ma c'hi (mush@machi.tel)
 // @description  Modifications de Mush.vg pour parties dans le style 'Les Loups Garous de Thiercelieux'
 // @grant      GM_xmlhttpRequest
@@ -24,7 +24,7 @@
 var $ = unsafeWindow.jQuery;
 var Main = unsafeWindow.Main;
 
-var version = '0.1.8';
+var version = '0.1.9';
 
 /**
  * Userscript global tools
@@ -159,8 +159,8 @@ function m_thisInit() {
     	cg = true;
     }
     
-    if(cg!=''&&ms_code!=cg) {
-    	
+    if(cg!=''&&cg!=undefined) {
+    	true;
     } else {
        $('#m_garou_details').html('Pas de partie MushGarou détectée<br />'
        +'<span class="solo"><img src="http://mush.vg/img/icons/ui/more.png" /> <a href="#" class="createGame">Créer une partie MushGarou</a></span>'
