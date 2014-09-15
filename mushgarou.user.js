@@ -91,19 +91,19 @@ function m_userscriptInit() {
 }
 
 function m_userscriptAfterInit() {
-	if(!localStorage['m_notFirstUserscript']) {
-	    if(localStorage['m_currentTab']) {
-	        $('#m_userscriptArea .m_tabs div').slideUp();
-	        $('#m_tabs_'+localStorage['m_currentTab']).slideDown();
-	        $('#m_userscriptArea .m_tabs ul li').removeClass('active');
-	        $('#m_userscriptArea .m_tabs ul li[data-id="m_tabs_'+localStorage['m_currentTab']+'"]').addClass('active');
-	    } else {
-	        $('#m_userscriptArea .m_tabs div').slideUp();
-	        $('#m_tabs_warning').slideDown();
-	        $('#m_userscriptArea .m_tabs ul li').removeClass('active');
-	        $('#m_userscriptArea .m_tabs ul li[data-id="m_tabs_warning"]').addClass('active');
-	    }
-	}
+    if(localStorage['m_currentTab']) {
+    	if(!localStorage['m_notFirstUserscript']) {
+        	$('#m_userscriptArea .m_tabs div').slideUp();
+    	}
+        $('#m_tabs_'+localStorage['m_currentTab']).slideDown();
+        $('#m_userscriptArea .m_tabs ul li').removeClass('active');
+        $('#m_userscriptArea .m_tabs ul li[data-id="m_tabs_'+localStorage['m_currentTab']+'"]').addClass('active');
+    } else if(!localStorage['m_notFirstUserscript']) {
+        $('#m_userscriptArea .m_tabs div').slideUp();
+        $('#m_tabs_warning').slideDown();
+        $('#m_userscriptArea .m_tabs ul li').removeClass('active');
+        $('#m_userscriptArea .m_tabs ul li[data-id="m_tabs_warning"]').addClass('active');
+    }
 }
 
 function m_updateTab(name,content) {
