@@ -32,6 +32,7 @@ var version = '0.1.3';
 
 function m_userscriptInit() {
 	if($('#m_userscriptArea').size()<1) {
+		localStorage['m_notFirstUserscript'] = false;
 		var html = '<div id="m_userscriptArea">'
 		+'<h2>UserScripts</h2>'
 		+'<div class="m_tabs">'
@@ -84,21 +85,25 @@ function m_userscriptInit() {
 	        $(this).addClass('active');
 	        localStorage['m_currentTab']=$(this).attr('data-id').substr(7);
 	    });
-	}   
+	} else {
+		localStorage['m_notFirstUserscript'] = true;
+	}
 }
 
 function m_userscriptAfterInit() {
-    if(localStorage['m_currentTab']) {
-        $('#m_userscriptArea .m_tabs div').slideUp();
-        $('#m_tabs_'+localStorage['m_currentTab']).slideDown();
-        $('#m_userscriptArea .m_tabs ul li').removeClass('active');
-        $('#m_userscriptArea .m_tabs ul li[data-id="m_tabs_'+localStorage['m_currentTab']+'"]').addClass('active');
-    } else {
-        $('#m_userscriptArea .m_tabs div').slideUp();
-        $('#m_tabs_warning').slideDown();
-        $('#m_userscriptArea .m_tabs ul li').removeClass('active');
-        $('#m_userscriptArea .m_tabs ul li[data-id="m_tabs_warning"]').addClass('active');
-    }
+	if(!localStorage['m_notFirstUserscript']) {
+	    if(localStorage['m_currentTab']) {
+	        $('#m_userscriptArea .m_tabs div').slideUp();
+	        $('#m_tabs_'+localStorage['m_currentTab']).slideDown();
+	        $('#m_userscriptArea .m_tabs ul li').removeClass('active');
+	        $('#m_userscriptArea .m_tabs ul li[data-id="m_tabs_'+localStorage['m_currentTab']+'"]').addClass('active');
+	    } else {
+	        $('#m_userscriptArea .m_tabs div').slideUp();
+	        $('#m_tabs_warning').slideDown();
+	        $('#m_userscriptArea .m_tabs ul li').removeClass('active');
+	        $('#m_userscriptArea .m_tabs ul li[data-id="m_tabs_warning"]').addClass('active');
+	    }
+	}
 }
 
 function m_updateTab(name,content) {
