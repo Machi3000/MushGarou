@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name       MushGarou
-// @version    0.1.13
+// @version    0.1.14
 // @author     Ma c'hi (mush@machi.tel)
 // @description  Modifications de Mush.vg pour parties dans le style 'Les Loups Garous de Thiercelieux'
 // @grant      GM_xmlhttpRequest
@@ -24,7 +24,7 @@
 var $ = unsafeWindow.jQuery;
 var Main = unsafeWindow.Main;
 
-var version = '0.1.13';
+var version = '0.1.14';
 
 /**
  * Userscript global tools
