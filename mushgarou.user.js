@@ -160,7 +160,8 @@ function m_thisInit() {
     }
     
 	$('#m_garou_details').html('Pas de partie MushGarou détectée<br />'
-	+'<span class="solo"><img src="http://mush.vg/img/icons/ui/more.png" /> <a href="#" class="createGame">Créer une partie MushGarou</a></span>');
+	+'<em>Vous devez être dans une partie Mush active et récente pour la transformer en partie de MushGarou.</em>'
+	+'<span class="solo disabled"><img src="http://mush.vg/img/icons/ui/more.png" /> <a href="#" class="createGame">Créer une partie MushGarou</a></span>');
 }
 
 
