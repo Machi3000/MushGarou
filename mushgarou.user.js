@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name       MushGarou
-// @version    0.1.14
+// @version    0.1.15
 // @author     Ma c'hi (mush@machi.tel)
 // @description  Modifications de Mush.vg pour parties dans le style 'Les Loups Garous de Thiercelieux'
 // @grant      GM_xmlhttpRequest
@@ -24,7 +24,7 @@
 var $ = unsafeWindow.jQuery;
 var Main = unsafeWindow.Main;
 
-var version = '0.1.14';
+var version = '0.1.15';
 
 /**
  * Userscript global tools
@@ -159,8 +159,8 @@ function m_thisInit() {
     	cg = true;
     }
     
-	$('#m_garou_details').html('Vous devez être dans une partie Mush active et récente pour la transformer en partie de MushGarou.<br />'
-	+'<span class="solo"><img src="http://intrusion.muxxu.com/img/icons/screen.png" /> <a href="#" class="createGame">Plus d\'infos</a></span>');
+	$('#m_garou_details').html('Vous devez être dans une partie Casting Mush récente pour la transformer en partie de MushGarou.<br />'
+	+'<span class="solo"><img src="http://intrusion.muxxu.com/img/icons/screen.png" /> <a href="#" class="createGame">+ d\'infos</a></span>');
 }
 
 
