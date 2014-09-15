@@ -144,6 +144,8 @@ function m_popin(title,message,button) {
 /**
  * Userscript specific code
  **/
+var cg;
+ 
 function m_thisInit() {
 	var html = ''
     +'<p style="float:right;opacity:0.4;"><a href="http://mush.blablatouar.com/garou/index.php" target="_blank">v '+version+'</a></p>'
@@ -151,6 +153,19 @@ function m_thisInit() {
     +'<span id="m_garou_details"></span>'
     +'';
     m_addTab('garou','http://www.hordes.fr/gfx/forum/smiley/h_shaman.gif',html,'Mush Garou');
+    
+    if(localStorage['mg_currentGame']) {
+    	// Call backend
+    	cg = true;
+    }
+    
+    if(cg!=''&&ms_code!=cg) {
+    	
+    } else {
+       $('#m_garou_details').html('Pas de partie MushGarou détectée<br />'
+       +'<span class="solo"><img src="http://mush.vg/img/icons/ui/more.png" /> <a href="#" class="createGame">Créer une partie MushGarou</a></span>'
+
+    }
 }
 
 
