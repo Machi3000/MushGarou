@@ -140,7 +140,12 @@ function m_popin(title,message,button) {
  * Userscript specific code
  **/
 function m_thisInit() {
-	
+	var html = ''
+    +'<p style="float:right;opacity:0.4;"><a href="http://mush.blablatouar.com/garou/index.php" target="_blank">v '+version+'</a></p>'
+    +'<h3><img src="http://mush.vg/img/icons/ui/book.png" /> Mush Garou</h3>'
+    +'<span id="m_garou_details"></span>'
+    +'';
+    m_addTab('garou','http://mush.vg/img/icons/ui/mushxp.png',html,'Mush Garou');
 }
 
 
