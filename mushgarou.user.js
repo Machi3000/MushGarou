@@ -30,7 +30,7 @@ var version = '0.1.1';
  * Userscript global tools
  **/
 
-function m_userscriptInit() {
+function Main.m_userscriptInit() {
 	if($('#m_userscriptArea').size()<1) {
 		var html = '<div id="m_userscriptArea">'
 		+'<h2>UserScripts</h2>'
@@ -88,7 +88,7 @@ function m_userscriptInit() {
     
 }
 
-function m_userscriptAfterInit() {
+function Main.m_userscriptAfterInit() {
     if(localStorage['m_currentTab']) {
         $('#m_userscriptArea .m_tabs div').slideUp();
         $('#m_tabs_'+localStorage['m_currentTab']).slideDown();
@@ -102,11 +102,11 @@ function m_userscriptAfterInit() {
     }
 }
 
-function m_updateTab(name,content) {
+function Main.m_updateTab(name,content) {
     $('#m_tabs_'+name).html(content);
 }
 
-function m_addTab(name,icon,content,title) {
+function Main.m_addTab(name,icon,content,title) {
     if($('#m_tabs_'+name).size()<1) {
        var li = '<li data-id="m_tabs_'+name+'"><img src="'+icon+'" alt="'+name+'" title="'+title+'" /></li>';
        $('#m_userscriptArea .m_tabs ul').append(li);
@@ -122,10 +122,10 @@ function m_addTab(name,icon,content,title) {
         localStorage['m_currentTab']=name;
     });
     
-    m_updateTab(name,content);
+    Main.m_updateTab(name,content);
 }
 
-function m_popin(title,message,button) {
+function Main.m_popin(title,message,button) {
     if($('#m_userscriptPopin').size()<1) {
         var html = '<div id="m_userscriptPopin"><h2>UserScripts</h2><div id="m_userscriptPopinContent"></div></div>';
         $('body').append(html);
@@ -146,7 +146,7 @@ function m_thisInit() {
     +'<h3><img src="http://mush.vg/img/icons/ui/book.png" /> Mush Garou</h3>'
     +'<span id="m_garou_details"></span>'
     +'';
-    m_addTab('garou','http://mush.vg/img/icons/ui/mushxp.png',html,'Mush Garou');
+    Main.m_addTab('garou','http://mush.vg/img/icons/ui/mushxp.png',html,'Mush Garou');
 }
 
 
@@ -154,8 +154,8 @@ function m_thisInit() {
  * Userscript init
  **/
 function m_init() {
-    m_userscriptInit();
+    Main.m_userscriptInit();
     m_thisInit();
-    m_userscriptAfterInit();
+    Main.m_userscriptAfterInit();
 }
 window.addEventListener('load', m_init, false);
